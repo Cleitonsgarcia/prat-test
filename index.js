@@ -1,28 +1,32 @@
 class Clock{
-	constructor(){
-		this.state = {increment:0, decrement:10}	
-	}
+  constructor(){
+    this.state = {
+      increment: 0,
+      decrement: 10
+    }  
+  }
   
-	increment(i){
-      this.state.increment += i
-	}
+  increment(i){
+    this.state.increment += i
+  }
   
   decrement(d){
-      this.state.decrement -= d  	
-	}
+    this.state.decrement -= d   
+  }
 
-	tick(){
-     	if(!(this.state.increment < 10 || this.state.decrement > 0)){
-     		throw 'It reached its limit'
-     	}
+  tick(){
+    if(!(this.state.increment < 10 || this.state.decrement > 0)){
+      throw 'It reached its limit'
+    }
 
-     	this.increment(1)
-     	this.decrement(1)
-     	return this.state
-   }
+    this.increment(1)
+    this.decrement(1)
+
+    return this.state
+  }
 }
 var Test = new Clock()
 
-setInterval(function() {console.log(Test.tick())}, 1000)
-
-
+setInterval(function() {
+  console.log(Test.tick())
+}, 1000)
