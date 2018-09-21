@@ -25,8 +25,8 @@ class Clock{
     return this.state
   }
 }
-var Test = new Clock()
 
-setInterval(function() {
-  console.log(Test.tick())
-}, 1000)
+
+const Test = new Clock()
+
+setInterval(() => console.log(Test.tick()), 1000)
